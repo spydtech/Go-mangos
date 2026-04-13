@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 33% 97%;
+    --foreground: 20 10% 15%;
+
+    --card: 40 30% 99%;
+    --card-foreground: 20 10% 15%;
+
+    --popover: 40 30% 99%;
+    --popover-foreground: 20 10% 15%;
+
+    --primary: 36 100% 50%;
+    --primary-foreground: 20 10% 10%;
+
+    --secondary: 85 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 20 8% 45%;
+
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 36 100% 50%;
+
+    --radius: 0.75rem;
+
+    --mango-gold: 42 100% 55%;
+    --mango-deep: 25 90% 48%;
+    --leaf-green: 120 40% 35%;
+    --leaf-light: 95 50% 55%;
+    --cream: 42 40% 95%;
+    --warm-brown: 25 30% 25%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient-mango {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--mango-gold)), hsl(var(--accent)));
+  }
+  .bg-gradient-mango {
+    background-image: linear-gradient(135deg, hsl(var(--mango-gold)), hsl(var(--primary)));
+  }
+  .bg-gradient-hero {
+    background-image: linear-gradient(135deg, hsl(var(--cream)), hsl(40, 30%, 92%));
+  }
+  .shadow-mango {
+    box-shadow: 0 8px 30px -8px hsl(var(--primary) / 0.3);
+  }
+  .shadow-card {
+    box-shadow: 0 4px 20px -4px hsl(var(--foreground) / 0.08);
+  }
+}
